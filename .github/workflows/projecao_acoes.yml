@@ -2,7 +2,7 @@ name: Projeção de Ações
 
 on:
   schedule:
-    - cron: '20 30 * * *'  # Executa às 23h20 UTC (convertido automaticamente para seu fuso horário local)
+    - cron: '05 00 * * *'  # Executa às 23h20 UTC todos os dias
 
 jobs:
   build:
