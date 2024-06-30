@@ -2,7 +2,7 @@ name: Enviar Mensagem Telegram Diariamente
 
 on:
   schedule:
-    - cron: '13 0 * * *'  # Executa às 00:06 UTC todos os dias
+    - cron: '15 0 * * *'  # Executa às 00:06 UTC todos os dias
 
 jobs:
   send_telegram_message:
@@ -19,6 +19,7 @@ jobs:
 
       - name: Instalar Dependências
         run: npm install
+             npm install node-fetch
 
       - name: Executar Script JavaScript
         run: node script.js
