@@ -1,0 +1,31 @@
+name: Daily Stock Analysis
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Executar diariamente às 06:00 UTC (ajuste para seu fuso horário)
+
+jobs:
+  run-analysis:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # Seu arquivo de requisitos aqui
+
+    - name: Run Python script
+      run: python script_bot_telegram.py  # Caminho para o seu script Python
+
+    - name: Send results to Telegram
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
