@@ -2,7 +2,7 @@ name: Daily Stock Analysis
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Executar diariamente às 06:00 UTC (ajuste para seu fuso horário)
+    - cron: '15 10 * * *'  # Executar diariamente às 06:00 UTC (ajuste para seu fuso horário)
 
 jobs:
   run-analysis:
@@ -23,9 +23,4 @@ jobs:
         pip install -r requirements.txt  # Seu arquivo de requisitos aqui
 
     - name: Run Python script
-      run: python script_bot_telegram.py  # Caminho para o seu script Python
-
-    - name: Send results to Telegram
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: script_bot_telegram.py  # Caminho para o seu script Python
