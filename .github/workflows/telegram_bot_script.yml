@@ -2,7 +2,7 @@ name: Send Telegram Message
 
 on:
   schedule:
-    - cron: '24 10 * * *'  # Executa todos os dias às 10:30 UTC
+    - cron: '27 13 * * *'  # Executa todos os dias às 10:30 UTC
 
 jobs:
   send_message:
