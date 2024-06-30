@@ -2,7 +2,7 @@ name: Daily Stock Analysis
 
 on:
   schedule:
-    - cron: '15 10 * * *'  # Executar diariamente às 06:00 UTC (ajuste para seu fuso horário)
+    - cron: '19 10 * * *'  # Executar diariamente às 06:00 UTC (ajuste para seu fuso horário)
 
 jobs:
   run-analysis:
