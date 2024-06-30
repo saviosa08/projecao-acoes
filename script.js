@@ -1,10 +1,10 @@
 const fetch = require('node-fetch');
 
 // Token do seu bot do Telegram
-const BOT_TOKEN = 'COLOQUE_AQUI_O_SEU_TOKEN_DO_BOT';
+const BOT_TOKEN = ${{ secrets.TELEGRAM_BOT_TOKEN }};
 
 // ID do chat onde você deseja enviar a mensagem (pode ser um chat privado com o bot)
-const CHAT_ID = 'COLOQUE_AQUI_O_CHAT_ID';
+const CHAT_ID = ${{ secrets.TELEGRAM_CHAT_ID }};
 
 // Texto da mensagem que você deseja enviar
 const message = 'Olá! Esta é uma mensagem de teste enviada pelo meu bot do Telegram.';
